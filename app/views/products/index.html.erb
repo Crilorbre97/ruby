@@ -1,5 +1,7 @@
 <h1>Listado de productos</h1>
 
+<%= link_to "Categorias", categories_path %>
+
 <% @products.each do |product| %>
     <div>
         <%= product.title %>

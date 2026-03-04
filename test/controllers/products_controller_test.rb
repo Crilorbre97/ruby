@@ -1,6 +1,7 @@
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   def setup
     @product = products(:nintendo)
+    @category = categories(:videojuegos)
   end
 
   test 'get products' do
@@ -27,7 +28,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
         product: {
           title: 'Mesa',
           description: 'Mesa para comedor',
-          price: 10
+          price: 10,
+          category_id: @category.id
         }
       }
     end

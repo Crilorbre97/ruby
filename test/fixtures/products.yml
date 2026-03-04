@@ -2,18 +2,22 @@ nintendo:
   title: Nintendo DS
   description: Nintendo DS con varios juegos
   price: 10
+  category: videojuegos
 
 coche:
   title: Coche rojo
   description: Coche rojo. Funciona con pilas que no van incluidas
   price: 1
+  category: coches
 
 figura:
   title: Figura Goku
   description: Figura de Dragon Ball de muy buena calidad
   price: 150
+  category: figuras
 
 fifa_25:
   title: Fifa 25
   description: El mismo juego que todos los años
   price: 40
+  category: videojuegos

@@ -1,0 +1,10 @@
+<h1>Listado categorias</h1>
+
+<% @categories.each do |category| %>
+    <div>
+        <%= category.label.capitalize %>
+        <%= link_to "Eliminar", category_path(category.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: '¿Estás seguro?' } %>
+    </div>
+<% end %>
+
+<%= link_to "Nueva categoria", new_category_path %>

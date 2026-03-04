@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :products
+  resources :categories, except: [:show, :edit, :update]
 end

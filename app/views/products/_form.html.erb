@@ -3,6 +3,9 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :price %>
+    <%= f.input :category do %>
+        <%= f.select :category_id, @categories.map { |c| [c.label, c.id] }, include_blank: true %>
+    <% end %>
 
     <%= f.button :submit %>
 
