@@ -1,5 +1,4 @@
 class FilterProducts
-
   attr_reader :products
 
   def initialize(products = initial_scope)
@@ -49,10 +48,10 @@ class FilterProducts
 
   def sorting(scoped, sorting_by)
     options = {
-      'newest': 'created_at DESC',
-      'oldest': 'created_at ASC',
-      'expensive': 'price DESC',
-      'cheapest': 'price ASC'
+      'newest': "created_at DESC",
+      'oldest': "created_at ASC",
+      'expensive': "price DESC",
+      'cheapest': "price ASC"
     }
     scoped.order(options[sorting_by&.to_sym] || options[:newest])
   end
