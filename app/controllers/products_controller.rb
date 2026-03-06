@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
     def index
-        @products = Product.all
+        @products = FilterProducts.new().call(product_params_filter)
+        @categories = Category.all
     end
 
     def show
@@ -50,5 +51,11 @@ class ProductsController < ApplicationController
 
     def product_params
         params.require(:product).permit(:title, :description, :price, :category_id)
+    end
+
+    def product_params_filter
+        return {} unless params[:filters].present?
+
+        params.require(:filters).permit(:title, :min_price, :max_price, :category_id, :sorting_by)
     end
 end

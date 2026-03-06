@@ -2,6 +2,23 @@
 
 <%= link_to t('.categories'), categories_path, data: { turbo_prefetch: false } %>
 
+<%= simple_form_for :filters, url: products_path, method: :get do |f| %>
+
+    <%= f.input :title, input_html: { value: params.dig(:filters, :title) } %>
+    <%= f.input :min_price, input_html: { value: params.dig(:filters, :min_price) } %>
+    <%= f.input :max_price, input_html: { value: params.dig(:filters, :max_price) } %>
+    <%= f.input :category do %>
+        <%= f.select :category_id, @categories.map { |c| [c.label, c.id] }, include_blank: true, selected: params.dig(:filters, :category_id) %>
+    <% end %>
+    <%= f.input :sorting_by, collection: [['newest', 'Más recientes'], ['oldest', 'Más antiguos'], ['expensive', 'Más caros'], ['cheapest', 'Más baratos']], label_method: :second, value_method: :first, selected: params.dig(:filters, :sorting_by) %>
+
+    <%= f.button :submit, t(".filter") %>
+    <%= link_to products_path do %>
+        <button><%= t(".clean") %></button>
+    <% end %>
+
+<% end %>
+
 <% @products.each do |product| %>
     <div>
         <%= product.title %>

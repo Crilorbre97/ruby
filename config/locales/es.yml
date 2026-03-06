@@ -8,6 +8,8 @@ es:
       show: Ver
       edit: Editar
       add: Añadir producto
+      filter: Filtrar
+      clean: Borrar filtros
     new:
       title: Añadir producto
       index: Listado productos

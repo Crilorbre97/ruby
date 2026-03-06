@@ -37,3 +37,9 @@ en:
         category: Category
       category:
         label: Label
+      filters:
+        title: 'Title'
+        min_price: 'Min price'
+        max_price: 'Max price'
+        category: Category
+        sorting_by: Sorting by

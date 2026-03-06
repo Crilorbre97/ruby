@@ -8,3 +8,9 @@ es:
         category: Categoria
       category:
         label: Etiqueta
+      filters:
+        title: 'Titulo'
+        min_price: 'Precio mínimo'
+        max_price: 'Precio máximo'
+        category: Categoria
+        sorting_by: Ordenador por
