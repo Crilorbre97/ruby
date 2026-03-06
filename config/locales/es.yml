@@ -1,0 +1,33 @@
+es:
+  common:
+    confirm: ¿Estas seguro?
+  products:
+    index:
+      title: Listado productos
+      categories: Categorias
+      show: Ver
+      edit: Editar
+      add: Añadir producto
+    new:
+      title: Añadir producto
+      index: Listado productos
+    edit:
+      title: Editar producto
+      index: Listado productos
+    form:
+      new: Crear
+      edit: Editar
+    show:
+      title: Detalles
+      delete: Borrar producto
+      index: Listado productos
+  categories:
+    index:
+      title: Listado categorias
+      products: Productos
+      delete: Eliminar
+      new: Añadir categoria
+    new:
+      title: Nueva categoria
+      add: Crear
+

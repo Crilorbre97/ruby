@@ -7,6 +7,6 @@
         <%= f.select :category_id, @categories.map { |c| [c.label, c.id] }, include_blank: true %>
     <% end %>
 
-    <%= f.button :submit %>
+    <%= f.button :submit, controller.action_name == 'new' ? t(".new") : t(".edit") %>
 
 <% end %>

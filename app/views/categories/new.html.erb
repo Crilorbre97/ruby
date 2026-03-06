@@ -1,9 +1,9 @@
-<h1>Nueva categoria</h1>
+<h1><%= t(".title") %></h1>
 
 <%= simple_form_for @category do |f| %>
 
     <%= f.input :label %>
 
-    <%= f.submit %>
+    <%= f.submit t(".add") %>
 
 <% end %>

@@ -1,0 +1,10 @@
+es:
+  simple_form:
+    labels:
+      product:
+        title: 'Titulo'
+        description: 'Descripción'
+        price: Precio
+        category: Categoria
+      category:
+        label: Etiqueta

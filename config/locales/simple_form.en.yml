@@ -29,3 +29,11 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+    labels:
+      product:
+        title: 'Title'
+        description: 'Description'
+        price: Price
+        category: Category
+      category:
+        label: Label
