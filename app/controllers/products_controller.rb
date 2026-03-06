@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
     def index
-        @products = FilterProducts.new().call(product_params_filter)
-        @categories = Category.all
+        @products = FilterProducts.new().call(product_params_filter).load_async
+        @categories = Category.all.load_async
     end
 
     def show
