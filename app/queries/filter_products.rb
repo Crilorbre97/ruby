@@ -23,7 +23,7 @@ class FilterProducts
   def filter_by_title(scoped, title)
     return scoped unless title.present?
 
-    scoped.where("title ilike '%#{title}%'")
+    scoped.where("title ilike ?", "%#{title}%")
   end
 
   def filter_by_min_price(scoped, min_price)
