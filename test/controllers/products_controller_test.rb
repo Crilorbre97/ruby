@@ -4,30 +4,67 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     @category = categories(:videojuegos)
   end
 
-  test 'get products' do
+  test "get products" do
     get products_path
 
     assert_response :success
   end
 
-  test 'get product' do
+  test "filter products by title" do
+    get products_path, params: {
+      filters: {
+        title: "nintendo"
+      }
+    }
+
+    products = @controller.instance_variable_get(:@products)
+    assert_equal products.all? { |p| p.title.downcase.include? "nintendo" }, true
+    assert_response :success
+  end
+
+  test "filter products by prices" do
+    get products_path, params: {
+      filters: {
+        min_price: "1",
+        max_price: "10"
+      }
+    }
+
+    products = @controller.instance_variable_get(:@products)
+    assert_equal products.all? { |p| p.price >= 1 && p.price <= 10 }, true
+    assert_response :success
+  end
+
+  test "filter products by category_id" do
+    get products_path, params: {
+      filters: {
+        category_id: @category.id
+      }
+    }
+
+    products = @controller.instance_variable_get(:@products)
+    assert_equal products.all? { |p| p.category.id == @category.id }, true
+    assert_response :success
+  end
+
+  test "get product" do
     get product_path(@product.id)
 
     assert_response :success
   end
 
-  test 'new product' do
+  test "new product" do
     get new_product_path
 
     assert_response :success
   end
 
-  test 'create product success' do
+  test "create product success" do
     assert_difference("Product.count", 1) do
       post products_path, params: {
         product: {
-          title: 'Mesa',
-          description: 'Mesa para comedor',
+          title: "Mesa",
+          description: "Mesa para comedor",
           price: 10,
           category_id: @category.id
         }
@@ -38,12 +75,12 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
 
-  test 'create product error' do
+  test "create product error" do
     assert_difference("Product.count", 0) do
       post products_path, params: {
         product: {
-          title: '',
-          description: '',
+          title: "",
+          description: "",
           price: 10
         }
       }
@@ -53,13 +90,13 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
-  test 'edit product' do
+  test "edit product" do
     get edit_product_path(@product.id)
 
     assert_response :success
   end
 
-  test 'update product ok' do
+  test "update product ok" do
     patch product_path(@product.id), params: {
       product: {
         title: "Updated title"
@@ -71,7 +108,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
 
-  test 'update product error' do
+  test "update product error" do
     patch product_path(@product.id), params: {
       product: {
         title: ""
@@ -83,7 +120,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_content
   end
 
-  test 'destroy product' do
+  test "destroy product" do
     assert_difference("Product.count", -1) do
       delete product_path(@product.id)
     end

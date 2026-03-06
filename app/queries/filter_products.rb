@@ -29,12 +29,14 @@ class FilterProducts
 
   def filter_by_min_price(scoped, min_price)
     return scoped unless min_price.present?
+    return scoped unless min_price.to_i.positive?
 
     scoped.where("price >= ?", min_price)
   end
 
   def filter_by_max_price(scoped, max_price)
     return scoped unless max_price.present?
+    return scoped unless max_price.to_i.positive?
 
     scoped.where("price <= ?", max_price)
   end
