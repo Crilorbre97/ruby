@@ -4,11 +4,35 @@ nintendo:
   price: 10
   category: videojuegos
 
-coche:
-  title: Coche rojo
-  description: Coche rojo. Funciona con pilas que no van incluidas
-  price: 1
+ps5:
+  title: Play Station 5
+  description: Play Station 5 PRO
+  price: 300
+  category: videojuegos
+
+seat_panda:
+  title: Seat panda
+  description: Seat panda del 2000 con más de 300.000kms
+  price: 2500
   category: coches
+
+ford_fiesta:
+  title: Ford fiesta
+  description: Ford fiesta del 2010 con más de 200.000 kms
+  price: 5000
+  category: coches
+
+fiat_multipla:
+  title: Fiat multiplá
+  description: Denominado el coche más feo del mundo
+  price: 3500
+  category: coches
+
+figura_naruto:
+  title: Figura Naruto
+  description: Figura de Banday
+  price: 75
+  category: figuras
 
 figura:
   title: Figura Goku
@@ -20,4 +44,40 @@ fifa_25:
   title: Fifa 25
   description: El mismo juego que todos los años
   price: 40
+  category: videojuegos
+
+mesa_comedor:
+  title: Mesa comedor
+  description: Mesa comedor del Ikea
+  price: 80
+  category: muebles
+
+silla_exterior:
+  title: Silla de exterior
+  description: Silla para exterior
+  price: 33
+  category: muebles
+
+iphone_17:
+  title: Iphone 17
+  description: La batería le falla
+  price: 250
+  category: moviles
+
+iphone_15:
+  title: Iphone 15
+  description: Seminuevo, funciona todo correctamente
+  price: 1000
+  category: moviles
+
+gta_5:
+  title: GTA 5
+  description: GTA 5 con la caratula seminueva
+  price: 55
+  category: videojuegos
+
+call_of_duty:
+  title: Call of Duty
+  description: Call of Duty, solo disco
+  price: 33
   category: videojuegos

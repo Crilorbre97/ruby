@@ -24,4 +24,6 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   belongs_to :category
+
+  paginates_per 10
 end

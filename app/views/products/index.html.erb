@@ -28,4 +28,6 @@
     </div>
 <% end %>
 
+<%= paginate @products %>
+
 <%= link_to t('.add'), new_product_path, data: { turbo_prefetch: false }  %>

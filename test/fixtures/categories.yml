@@ -11,3 +11,9 @@ coches:
 
 figuras:
   label: figuras
+
+muebles:
+  label: muebles
+
+moviles:
+  label: moviles
