@@ -1,8 +1,19 @@
 <h1><%= t('.title') %></h1>
 
 <h2><%= @product.title %></h2>
-<span><%= @product.description %><span>
-<span><%= @product.price %>€<span>
+<div>
+    <strong><%= t("simple_form.labels.product.description") %>:</strong>
+    <span><%= @product.description %><span>
+</div>
+<div>
+    <strong><%= t("simple_form.labels.product.price") %>:</strong>
+    <span><%= @product.price %>€<span>
+</div>
+<div>
+    <strong><%= t("simple_form.labels.product.category") %>:</strong>
+    <span><%= @product.category.label.capitalize %><span>
+</div>
+
 
 <div>
     <%= link_to t('.delete'), product_path(@product.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: '¿Estás seguro?' }  %>

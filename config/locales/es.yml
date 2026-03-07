@@ -1,6 +1,10 @@
 es:
   common:
     confirm: ¿Estas seguro?
+  views:
+    pagination:
+      next: Siguiente
+      last: Última
   products:
     index:
       title: Listado productos
