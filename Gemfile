@@ -81,4 +81,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "simplecov"
+  gem "webmock", "~> 3.26", ">= 3.26.1"
 end
