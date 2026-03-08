@@ -25,7 +25,7 @@ module Vendelo
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Available languages
-    config.i18n.available_locales = [:en, :es]
+    config.i18n.available_locales = [ :en, :es ]
 
     # Languague by default
     config.i18n.default_locale = :es

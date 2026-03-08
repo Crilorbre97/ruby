@@ -1,6 +1,28 @@
 en:
   common:
     confirm: ¿Are you sure?
+  activerecord:
+    errors:
+      model:
+        user_account:
+          attributes:
+            password:
+              weak_password: Password must contains at least 8 characters, one uppercase, one upcase, one number and one symbol
+            confirm_password:
+              password_mismatch: Passwords do not match
+        user:
+          attributes:
+            phone:
+              invalid_phone: Phone must start by 6 or 7 and his lenght should be of 9
+            birth_date:
+              not_user_allowed: User must be more than 18 years old
+  enums:
+    user:
+      genders:
+      genders:
+        male: Male
+        female: Female
+        other: Other
   views:
     pagination:
       next: Next
@@ -36,3 +58,8 @@ en:
     new:
       title: New category
       add: Create
+  authentication:
+    users:
+      new:
+        title: Register new user
+        new: Register

@@ -43,3 +43,14 @@ en:
         max_price: 'Max price'
         category: Category
         sorting_by: Sorting by
+      user:
+        name: Name
+        lastname: Lastname
+        email: Email
+        phone: Phone
+        gender: Gender
+        birht_date: Birth date
+      user_account:
+        username: Username
+        password: Password
+        confirm_password: Confirm password

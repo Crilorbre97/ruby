@@ -12,6 +12,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  # With namespace and not config
+  #   /authentication/users/new
+  # Remove namespace from route
+  #   path: '', as: ''
+  #   path to delete /authentication from route
+  #   as to not use authentication_users_new...
+  namespace :authentication, path: "", as: "" do
+      resources :users, only: [ :new, :create ], path: "/register", path_names: { new: "/" }
+  end
   resources :products
-  resources :categories, except: [:show, :edit, :update]
+  resources :categories, except: [ :show, :edit, :update ]
 end

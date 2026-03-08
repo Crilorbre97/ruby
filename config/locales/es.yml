@@ -1,6 +1,27 @@
 es:
   common:
     confirm: ¿Estas seguro?
+  activerecord:
+    errors:
+      models:
+        user_account:
+          attributes:
+            password:
+              weak_password: La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un símbolo
+            confirm_password:
+              password_mismatch: Las contraseñas no coinciden
+        user:
+          attributes:
+            phone:
+              invalid_phone: El móvil debe empezar por 6 o 7 y tener una longitud de 9
+            birth_date:
+              not_user_allowed: El usuario debe ser mayor de edad
+  enums:
+    user:
+      genders:
+        male: Hombre
+        female: Mujer
+        other: Otro
   views:
     pagination:
       next: Siguiente
@@ -36,4 +57,8 @@ es:
     new:
       title: Nueva categoria
       add: Crear
-
+  authentication:
+    users:
+      new:
+        title: Registro nuevo usuario
+        new: Registrar

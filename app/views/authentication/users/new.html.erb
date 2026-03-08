@@ -1,0 +1,20 @@
+<h1><%= t(".title") %></h1>
+
+<%= simple_form_for @user do |f| %>
+
+    <%= f.input :name, input_html: { value: params.dig(:user, :name) } %>
+    <%= f.input :lastname, input_html: { value: params.dig(:user, :lastname) } %>
+    <%= f.input :email, input_html: { value: params.dig(:user, :email) } %>
+    <%= f.input :phone, input_html: { value: params.dig(:user, :phone) } %>
+    <%= f.input :gender, collection: User.genders.keys.map { |s| [t("enums.user.genders.#{s}"), s] }, include_blank: true, selected: params.dig(:user, :gender) %>
+    <%= f.input :birth_date, as: :date, input_html: { value: params.dig(:user, :birth_date) } %>
+
+    <%= f.simple_fields_for :user_account do |account| %>
+        <%= account.input :username, input_html: { value: params.dig(:user, :user_account_attributes, :username) } %>
+        <%= account.input :password, input_html: { value: params.dig(:user, :user_account_attributes, :password) } %>
+        <%= account.input :confirm_password, input_html: { value: params.dig(:user, :user_account_attributes, :confirm_password) } %>
+    <% end %>
+
+    <%= f.button :submit, t(".new")%>
+
+<% end %>

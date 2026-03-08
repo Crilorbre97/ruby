@@ -14,3 +14,14 @@ es:
         max_price: 'Precio máximo'
         category: Categoria
         sorting_by: Ordenador por
+      user:
+        name: Nombre
+        lastname: Apellidos
+        email: Email
+        phone: Móvil
+        gender: Género
+        birth_date: Fecha de nacimiento
+      user_account:
+        username: Usuario
+        password: Contraseña
+        confirm_password: Confirmar contraseña

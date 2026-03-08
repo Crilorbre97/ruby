@@ -12,9 +12,9 @@
 #  index_categories_on_label  (label) UNIQUE
 #
 class Category < ApplicationRecord
-  validates :label, presence: true, uniqueness: true
-
   has_many :products, dependent: :restrict_with_exception
+
+  validates :label, presence: true, uniqueness: true
 
   before_save :downcase_attrs
 
