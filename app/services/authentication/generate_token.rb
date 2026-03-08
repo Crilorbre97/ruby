@@ -1,6 +1,6 @@
 require "jwt"
 
-class Authentication::JwtService
+class Authentication::GenerateToken
   attr_reader :user
 
   def initialize(user)
@@ -10,6 +10,8 @@ class Authentication::JwtService
   def call
     JWT.encode(generate_payload, secret_key, "HS256")
   end
+
+  private
 
   def generate_payload
     {

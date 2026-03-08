@@ -16,7 +16,7 @@ class Authentication::SessionsController < ApplicationController
     })
 
     if @user_account&.authenticate(login_params[:password])
-      token = Authentication::JwtService.new(@user_account.user).call
+      token = Authentication::GenerateToken.new(@user_account.user).call
       session[:token] = token
       redirect_to products_path, notice: t(".created")
     else
