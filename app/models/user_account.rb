@@ -3,9 +3,9 @@
 # Table name: user_accounts
 #
 #  id              :bigint           not null, primary key
-#  password_digest :string
-#  role            :integer
-#  username        :string
+#  password_digest :string           not null
+#  role            :integer          not null
+#  username        :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  user_id         :bigint           not null

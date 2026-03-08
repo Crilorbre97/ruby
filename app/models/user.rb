@@ -3,12 +3,13 @@
 # Table name: users
 #
 #  id         :bigint           not null, primary key
-#  birth_date :date
-#  email      :string
-#  gender     :integer
+#  avatar_url :string
+#  birth_date :date             not null
+#  email      :string           not null
+#  gender     :integer          not null
 #  lastname   :string
-#  name       :string
-#  phone      :string
+#  name       :string           not null
+#  phone      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
