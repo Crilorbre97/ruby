@@ -5,7 +5,7 @@
 #  id         :bigint           not null, primary key
 #  birth_date :date
 #  email      :string
-#  gender     :string
+#  gender     :integer
 #  lastname   :string
 #  name       :string
 #  phone      :string
@@ -33,7 +33,7 @@ class User < ApplicationRecord
       message: :invalid_phone
     }
 
-  enum gender: { male: 0, female: 1, other: 2 }
+  enum :gender, { male: 0, female: 1, other: 2 }
   validates :gender, presence: true, inclusion: { in: genders.keys }
   validates :birth_date, presence: true
   validate :is_more_than_18

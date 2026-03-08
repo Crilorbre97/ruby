@@ -4,7 +4,7 @@
 #
 #  id              :bigint           not null, primary key
 #  password_digest :string
-#  role            :string
+#  role            :integer
 #  username        :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
@@ -33,7 +33,7 @@ class UserAccount < ApplicationRecord
       message: :weak_password
     }
   validates :confirm_password, presence: true
-  enum role: { user: 0, admin: 1, super_admin: 2 }
+  enum :role, { user: 0, admin: 1, super_admin: 2 }
   validates :role, presence: true, inclusion: { in: roles.keys }
 
   validate :passwords_match

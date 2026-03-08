@@ -34,7 +34,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_03_08_103957) do
   create_table "user_accounts", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.string "role"
+    t.integer "role"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_03_08_103957) do
     t.string "lastname"
     t.string "email"
     t.string "phone"
-    t.string "gender"
+    t.integer "gender"
     t.date "birth_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
