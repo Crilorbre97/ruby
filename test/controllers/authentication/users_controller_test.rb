@@ -6,6 +6,7 @@ class Authentication::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "post create user ok" do
+    stub_unsplash_random_photo(200, { urls: { raw: "random_url" } }.to_json)
     post users_url, params: {
       user: {
         name: "User",
@@ -43,5 +44,20 @@ class Authentication::UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_equal @controller.instance_variable_get(:@user).valid?, false
     assert_response :unprocessable_entity
+  end
+
+  private
+
+  def stub_unsplash_random_photo(status_code, body = nil)
+    stub_request(:get, "https://fake.unsplash.test:80/photos/random").
+      with(
+        headers: {
+          "Accept" => "*/*",
+          "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+          "Authorization" => "Client-ID fake_access_key",
+          "Host" => "fake.unsplash.test"
+        }
+      )
+      .to_return(status: status_code, body: body, headers: {})
   end
 end

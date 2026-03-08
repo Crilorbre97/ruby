@@ -1,4 +1,6 @@
 ENV["RAILS_ENV"] ||= "test"
+ENV["UNSPLASH_URL"]="http://fake.unsplash.test"
+ENV["UNSPLASH_ACCESS_KEY"]="fake_access_key"
 require_relative "../config/environment"
 require "rails/test_help"
 require "simplecov"
