@@ -63,3 +63,7 @@ en:
       new:
         title: Register new user
         new: Register
+    sessions:
+      new:
+        title: Login
+        new: Login

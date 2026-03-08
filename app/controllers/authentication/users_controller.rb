@@ -8,13 +8,8 @@ class Authentication::UsersController < ApplicationController
     @user = User.new(user_params)
     @user.user_account.role = "user" unless @user.user_account.nil?
 
-    pp '1111111111'
-    pp '1111111111'
-    pp @user
-    pp '1111111111'
-    pp '1111111111'
     if @user.save
-      redirect_to products_path, notice: "Usuario registrado con éxito"
+      redirect_to new_session_path, notice: "Usuario registrado con éxito"
     else
       render :new, status: :unprocessable_entity
     end

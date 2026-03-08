@@ -1,0 +1,10 @@
+<h1><%= t(".title") %></h1>
+
+<%= simple_form_for @session, url: sessions_path, method: :post  do |f| %>
+
+    <%= f.input :username, input_html: { value: params.dig(:session, :username) } %>
+    <%= f.input :password, input_html: { value: params.dig(:session, :password) } %>
+
+    <%= f.button :submit, t(".new")%>
+
+<% end %>

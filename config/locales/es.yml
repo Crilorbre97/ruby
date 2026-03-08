@@ -62,3 +62,7 @@ es:
       new:
         title: Registro nuevo usuario
         new: Registrar
+    sessions:
+      new:
+        title: Inicio sesión
+        new: Iniciar sesión

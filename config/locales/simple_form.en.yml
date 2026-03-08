@@ -54,3 +54,6 @@ en:
         username: Username
         password: Password
         confirm_password: Confirm password
+      session_form:
+        username: Username
+        password: Password

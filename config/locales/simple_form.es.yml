@@ -25,3 +25,6 @@ es:
         username: Usuario
         password: Contraseña
         confirm_password: Confirmar contraseña
+      session_form:
+        username: Usuario
+        password: Contraseña
