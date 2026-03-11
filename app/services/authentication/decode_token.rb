@@ -22,8 +22,4 @@ class Authentication::DecodeToken
   def secret_key
     ENV["JWT_SECRET_KEY"]
   end
-
-  def filter_payload(payload)
-    payload.select { |i| i.keys[0] == "user_id" }
-  end
 end
