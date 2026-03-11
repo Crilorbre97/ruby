@@ -6,7 +6,7 @@ class Unsplash
   def random_phono
     uri = URI("#{url}/photos/random")
     request = Net::HTTP::Get.new(uri)
-    request["Authorization"] = "Client-ID #{ENV["UNSPLASH_ACCESS_KEY"]}"
+    request["Authorization"] = "Client-ID #{access_key}"
     response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
       http.request(request)
     end
@@ -22,9 +22,7 @@ class Unsplash
     ENV["UNSPLASH_URL"]
   end
 
-  def headers
-    {
-      "Authorization" => "Client-ID #{ENV["UNSPLASH_ACCESS_KEY"]}"
-    }
+  def access_key
+    ENV["UNSPLASH_ACCESS_KEY"]
   end
 end
