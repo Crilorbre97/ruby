@@ -27,6 +27,12 @@ en:
     pagination:
       next: Next
       last: Last
+  shared:
+    header:
+      login: Login
+      register: Register
+      products: Products
+      categories: Categories
   products:
     index:
       title: Product list

@@ -1,12 +1,10 @@
-<h1><%= t(".title") %> </h1>
-
-<%= link_to t(".products"), products_path, data: { turbo_prefetch: false } %>
+<h2><%= t(".title") %> </h2>
 
 <% @categories.each do |category| %>
     <div>
         <%= category.label.capitalize %>
-        <%= link_to t(".delete"), category_path(category.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: t("common.confirm") } %>
+        <%= link_to t(".delete"), category_path(category.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: t("common.confirm") } if Current.user.present? %>
     </div>
 <% end %>
 
-<%= link_to t(".new"), new_category_path, data: { turbo_prefetch: false } %>
+<%= link_to t(".new"), new_category_path, data: { turbo_prefetch: false } if Current.user.present? %>

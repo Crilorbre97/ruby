@@ -54,12 +54,14 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "new product" do
+    login_user
     get new_product_path
 
     assert_response :success
   end
 
   test "create product success" do
+    login_user
     assert_difference("Product.count", 1) do
       post products_path, params: {
         product: {
@@ -76,6 +78,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "create product error" do
+    login_user
     assert_difference("Product.count", 0) do
       post products_path, params: {
         product: {
@@ -91,12 +94,14 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "edit product" do
+    login_user
     get edit_product_path(@product.id)
 
     assert_response :success
   end
 
   test "update product ok" do
+    login_user
     patch product_path(@product.id), params: {
       product: {
         title: "Updated title"
@@ -109,6 +114,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "update product error" do
+    login_user
     patch product_path(@product.id), params: {
       product: {
         title: ""
@@ -121,6 +127,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "destroy product" do
+    login_user
     assert_difference("Product.count", -1) do
       delete product_path(@product.id)
     end

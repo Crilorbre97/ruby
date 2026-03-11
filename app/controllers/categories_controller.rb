@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  skip_before_action :protect_pages, only: [ :index ]
+
   def index
     @categories = Category.all
   end

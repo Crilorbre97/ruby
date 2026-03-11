@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+    skip_before_action :protect_pages, only: [ :index, :show ]
+
     def index
         @products = FilterProducts.new().call(product_params_filter).page(params[:page]).load_async
         @categories = Category.all.load_async

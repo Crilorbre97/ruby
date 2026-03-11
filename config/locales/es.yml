@@ -26,6 +26,12 @@ es:
     pagination:
       next: Siguiente
       last: Última
+  shared:
+    header:
+      login: Inicio sesión
+      register: Registro
+      products: Productos
+      categories: Categorías
   products:
     index:
       title: Listado productos

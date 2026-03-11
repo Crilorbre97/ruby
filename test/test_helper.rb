@@ -16,5 +16,14 @@ module ActiveSupport
 
     # Add more helper methods to be used by all tests here...
     SimpleCov.start
+
+    def login_user
+      post sessions_path, params: {
+        session_form: {
+          username: "sarah",
+          password: "Contr@seña1"
+        }
+      }
+    end
   end
 end

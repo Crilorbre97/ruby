@@ -1,4 +1,6 @@
 class Authentication::SessionsController < ApplicationController
+  skip_before_action :protect_pages
+
   def new
     @session = SessionForm.new
   end
@@ -22,6 +24,12 @@ class Authentication::SessionsController < ApplicationController
     else
       redirect_to new_session_path, alert: t(".failed")
     end
+  end
+
+  def logout
+    session.delete(:token)
+
+    redirect_to products_path
   end
 
   private

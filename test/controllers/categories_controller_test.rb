@@ -3,19 +3,21 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     @category = categories(:videojuegos)
   end
 
-  test "get index" do
+  test "get category index" do
     get categories_url
 
     assert_response :success
   end
 
-  test "get new" do
+  test "new cagegory" do
+    login_user
     get new_category_url
 
     assert_response :success
   end
 
-  test "post create ok" do
+  test "post create category ok" do
+    login_user
     assert_difference("Category.count", 1) do
       post categories_url, params: {
         category: {
@@ -28,7 +30,8 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
 
-  test "post create error" do
+  test "post create category error" do
+    login_user
     assert_difference("Category.count", 0) do
       post categories_url, params: {
         category: {
@@ -41,13 +44,15 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
-  test "destroy raise exception" do
+  test "destroy category raise exception" do
+    login_user
     assert_raise ActiveRecord::DeleteRestrictionError do
       delete category_url(@category.id)
     end
   end
 
-  test "destroy ok" do
+  test "destroy category ok" do
+    login_user
     category = categories(:musica)
     assert_difference("Category.count", -1) do
       delete category_path(category.id)

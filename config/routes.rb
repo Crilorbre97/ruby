@@ -20,7 +20,11 @@ Rails.application.routes.draw do
   #   as to not use authentication_users_new...
   namespace :authentication, path: "", as: "" do
       resources :users, only: [ :new, :create ], path: "/register", path_names: { new: "/" }
-      resources :sessions, only: [ :new, :create ], path: "/login", path_names: { new: "/" }
+      resources :sessions, only: [ :new, :create ], path: "/login", path_names: { new: "/" } do
+        collection do
+          post :logout
+        end
+      end
   end
   resources :products
   resources :categories, except: [ :show, :edit, :update ]
