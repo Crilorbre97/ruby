@@ -30,4 +30,8 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   paginates_per 10
+
+  def is_owner?
+    user_id == Current.user&.id
+  end
 end

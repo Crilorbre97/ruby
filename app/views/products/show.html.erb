@@ -22,5 +22,5 @@
 
 
 <div>
-    <%= link_to t('.delete'), product_path(@product.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: '¿Estás seguro?' } if Current.user.present? %>
+    <%= link_to t('.delete'), product_path(@product.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: '¿Estás seguro?' } if Current.user.present? && policy(@product).destroy? %>
 </div>
