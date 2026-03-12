@@ -33,6 +33,7 @@ en:
       register: Register
       products: Products
       categories: Categories
+      logout: Logout
   products:
     index:
       title: Product list
