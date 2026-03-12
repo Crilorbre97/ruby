@@ -47,6 +47,21 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "filter products by user_id" do
+    user = users(:user)
+    get products_path, params: {
+      filters: {
+        user_id: user.id.to_s
+      }
+    }
+
+    products = @controller.instance_variable_get(:@products)
+    # Another form
+    # assert_equal products.pluck(:user_id).uniq, [ user.id ]
+    assert_equal products.all? { |p| p.user.id == user.id }, true
+    assert_response :success
+  end
+
   test "get product" do
     get product_path(@product.id)
 

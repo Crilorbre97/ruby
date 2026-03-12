@@ -54,6 +54,7 @@ es:
       title: Detalles
       delete: Borrar producto
       index: Listado productos
+      more_products: Más products
   categories:
     index:
       title: Listado categorias

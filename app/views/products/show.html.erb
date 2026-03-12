@@ -13,6 +13,12 @@
     <strong><%= t("simple_form.labels.product.category") %>:</strong>
     <span><%= @product.category.label.capitalize %><span>
 </div>
+<div>
+    <strong><%= t("simple_form.labels.product.user") %>:</strong>
+    <span><%= @product.user.name %> <%= @product.user.lastname %><span>
+
+    <%= link_to t(".more_products"), products_path(filters: { user_id: @product.user.id }), data: { turbo_prefetch: false } %>
+</div>
 
 
 <div>

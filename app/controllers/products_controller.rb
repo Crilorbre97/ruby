@@ -58,6 +58,6 @@ class ProductsController < ApplicationController
     def product_params_filter
         return {} unless params[:filters].present?
 
-        params.require(:filters).permit(:title, :min_price, :max_price, :category_id, :sorting_by)
+        params.require(:filters).permit(:title, :min_price, :max_price, :category_id, :user_id, :sorting_by)
     end
 end

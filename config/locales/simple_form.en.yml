@@ -35,6 +35,7 @@ en:
         description: 'Description'
         price: Price
         category: Category
+        user: Seller
       category:
         label: Label
       filters:

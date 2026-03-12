@@ -11,6 +11,7 @@ class FilterProducts
     scoped = filter_by_min_price(scoped, params[:min_price])
     scoped = filter_by_max_price(scoped, params[:max_price])
     scoped = filter_by_category_id(scoped, params[:category_id])
+    scoped = filter_by_user_id(scoped, params[:user_id])
     sorting(scoped, params[:sorting_by])
   end
 
@@ -44,6 +45,12 @@ class FilterProducts
     return scoped unless category_id.present?
 
     scoped.where(category_id: category_id)
+  end
+
+  def filter_by_user_id(scoped, user_id)
+    return scoped unless user_id.present?
+
+    scoped.where(user_id: user_id)
   end
 
   def sorting(scoped, sorting_by)

@@ -6,6 +6,7 @@ es:
         description: 'Descripción'
         price: Precio
         category: Categoria
+        user: Vendedor
       category:
         label: Etiqueta
       filters:
