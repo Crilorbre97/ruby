@@ -42,4 +42,12 @@ class Authentication::SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_equal @controller.instance_variable_get(:@session).valid?, false
     assert_response :unprocessable_entity
   end
+
+  test "post logout ok" do
+    login_user
+    post logout_sessions_path
+
+    assert_response :redirect
+    assert_redirected_to products_path
+  end
 end
