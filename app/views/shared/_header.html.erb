@@ -1,6 +1,10 @@
 <h1> Vendelo </h1>
 
 <% if Current.user.present? %>
+    <h2><%= t(".welcome") %> <%= Current.user.name%></h2>
+<% end %>
+
+<% if Current.user.present? %>
     <%= link_to t(".logout"), logout_sessions_path, data: { turbo_prefetch: false, turbo_method: :post, turbo_confirm: t("common.confirm") } %>
 <% else %>
     <%= link_to t(".login"), new_session_path, data: { turbo_prefetch: false } %>

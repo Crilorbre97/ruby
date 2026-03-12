@@ -33,6 +33,7 @@ es:
       products: Productos
       categories: Categorías
       logout: Cerrar sesión
+      welcome: Bienvenido
   products:
     index:
       title: Listado productos

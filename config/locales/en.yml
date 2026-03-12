@@ -34,6 +34,7 @@ en:
       products: Products
       categories: Categories
       logout: Logout
+      welcome: Welcome
   products:
     index:
       title: Product list
