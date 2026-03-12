@@ -24,6 +24,9 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
+# Pundit
+gem "pundit", "~> 2.5", ">= 2.5.2"
+
 # Kaminari pagination
 gem "kaminari", "~> 1.2", ">= 1.2.2"
 
