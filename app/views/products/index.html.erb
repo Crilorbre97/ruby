@@ -18,12 +18,14 @@
 <% end %>
 
 <% @products.each do |product| %>
-    <div>
-        <%= product.title %>
+    <ul>
+        <li>
+            <%= product.title %>
 
-        <%= link_to t('.show'), product_path(product.id), data: { turbo_prefetch: false } %>
-        <%= link_to t('.edit'), edit_product_path(product.id), data: { turbo_prefetch: false } if Current.user.present? && policy(product).update? %>
-    </div>
+            <%= link_to t('.show'), product_path(product.id), data: { turbo_prefetch: false } %>
+            <%= link_to t('.edit'), edit_product_path(product.id), data: { turbo_prefetch: false } if Current.user.present? && policy(product).update? %>
+        </li>
+    </ul>
 <% end %>
 
 <%= paginate @products %>
