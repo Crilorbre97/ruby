@@ -25,5 +25,14 @@ module ActiveSupport
         }
       }
     end
+
+    def login_admin
+      post sessions_path, params: {
+        session_form: {
+          username: "john",
+          password: "Contr@seña1"
+        }
+      }
+    end
   end
 end
