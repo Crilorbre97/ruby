@@ -2,15 +2,18 @@ class CategoriesController < ApplicationController
   skip_before_action :protect_pages, only: [ :index ]
 
   def index
+    authorize Category
     @categories = Category.all
   end
 
   def new
     @category = Category.new
+    authorize @category
   end
 
   def create
     @category = Category.new(category_params)
+    authorize @category
 
     if @category.save
       redirect_to categories_path
@@ -21,6 +24,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
+    authorize @category
     @category.destroy
 
     redirect_to categories_path

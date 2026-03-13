@@ -42,6 +42,10 @@ class User < ApplicationRecord
 
   before_save :downcase_attributes
 
+  def is_admin?
+    user_account&.role == "admin"
+  end
+
   private
 
   def is_more_than_18
