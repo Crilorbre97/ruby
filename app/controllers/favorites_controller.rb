@@ -1,4 +1,10 @@
 class FavoritesController < ApplicationController
+  def index
+    authorize Favorite
+
+    @favorites = Favorite.where(user: Current.user.id)
+  end
+
   def create
     @favorite = Favorite.new(favotire_params)
     authorize @favorite

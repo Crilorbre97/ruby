@@ -35,6 +35,7 @@ en:
       categories: Categories
       logout: Logout
       welcome: Welcome
+      favorites: Favorites
   products:
     index:
       title: Product list
@@ -78,3 +79,7 @@ en:
       new:
         title: Login
         new: Login
+  favorites:
+    index:
+      title: Favorites
+      show: Show

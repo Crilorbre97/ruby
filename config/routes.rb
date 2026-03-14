@@ -28,5 +28,5 @@ Rails.application.routes.draw do
   end
   resources :products
   resources :categories, except: [ :show, :edit, :update ]
-  resources :favorites, only: [ :create, :destroy ]
+  resources :favorites, only: [ :create, :destroy, :index ]
 end

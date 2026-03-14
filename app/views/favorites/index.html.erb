@@ -1,0 +1,10 @@
+<h2><%= t('.title') %></h2>
+
+<ul>
+    <% @favorites.each do |favorite| %>
+        <li>
+            <%= favorite.product.title %>
+            <%= link_to t('.show'), product_path(favorite.product.id), data: { turbo_prefetch: false } %>
+        </li>
+    <% end %>
+</ul>

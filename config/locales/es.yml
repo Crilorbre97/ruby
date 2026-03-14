@@ -34,6 +34,7 @@ es:
       categories: Categorías
       logout: Cerrar sesión
       welcome: Bienvenido
+      favorites: Favoritos
   products:
     index:
       title: Listado productos
@@ -77,3 +78,7 @@ es:
       new:
         title: Inicio sesión
         new: Iniciar sesión
+  favorites:
+    index:
+      title: Favoritos
+      show: Ver
