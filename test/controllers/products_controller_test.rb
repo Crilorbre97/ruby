@@ -48,7 +48,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "filter products by user_id" do
-    user = users(:user)
+    user = users(:sara_user)
     get products_path, params: {
       filters: {
         user_id: user.id.to_s

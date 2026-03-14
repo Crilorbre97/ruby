@@ -1,19 +1,25 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-user:
+sara_account:
   username: sarah
   password_digest: <%= BCrypt::Password.create('Contr@seña1', cost: 5) %>
   role: 0
-  user: user
+  user: sara_user
+
+peter_account:
+  username: peter
+  password_digest: <%= BCrypt::Password.create('Contr@seña1', cost: 5) %>
+  role: 0
+  user: peter_user
 
 admin:
   username: john
   password_digest: <%= BCrypt::Password.create('Contr@seña1', cost: 5) %>
   role: 1
-  user: admin
+  user: john_admin
 
 super_admin:
   username: mark
   password_digest: <%= BCrypt::Password.create('Contr@seña1', cost: 5) %>
   role: 2
-  user: super_admin
+  user: mark_super_admin
