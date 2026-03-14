@@ -7,6 +7,14 @@ class FavoritesController < ApplicationController
     redirect_to product_path(@favorite.product.id)
   end
 
+  def destroy
+    @favorite = Favorite.find_by(product: params[:id], user: Current.user.id)
+    authorize @favorite
+
+    @favorite.destroy
+    redirect_to product_path(@favorite.product.id)
+  end
+
   private
 
   def favotire_params

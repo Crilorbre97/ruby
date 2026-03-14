@@ -59,6 +59,7 @@ en:
       index: Product list
       more_products: More products
       add_favorites: Add to favorites
+      remove_favorite: Remove favorite
   categories:
     index:
       title: Categories list

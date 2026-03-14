@@ -35,4 +35,8 @@ class Product < ApplicationRecord
   def is_owner?
     user_id == Current.user&.id
   end
+
+  def favorite
+    favorites.find_by(user: Current.user)
+  end
 end
