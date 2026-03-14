@@ -57,6 +57,7 @@ es:
       delete: Borrar producto
       index: Listado productos
       more_products: Más productos
+      add_favorites: Añadir a favoritos
   categories:
     index:
       title: Listado categorias

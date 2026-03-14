@@ -1,4 +1,5 @@
 ENV["RAILS_ENV"] ||= "test"
+ENV["JWT_SECRET_KEY"]="jwt_secret_key"
 ENV["UNSPLASH_URL"]="http://fake.unsplash.test"
 ENV["UNSPLASH_ACCESS_KEY"]="fake_access_key"
 require_relative "../config/environment"

@@ -1,6 +1,7 @@
 <h2><%= t('.title') %></h2>
 
 <h2><%= @product.title %></h2>
+
 <div>
     <strong><%= t("simple_form.labels.product.description") %>:</strong>
     <span><%= @product.description %><span>
@@ -22,5 +23,9 @@
 
 
 <div>
-    <%= link_to t('.delete'), product_path(@product.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: '¿Estás seguro?' } if Current.user.present? && policy(@product).destroy? %>
+    <%= link_to t('.delete'), product_path(@product.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: t("common.confirm") } if Current.user.present? && policy(@product).destroy? %>
+</div>
+
+<div>
+    <%= link_to t(".add_favorites"), favorites_path(product_id: @product.id), data: { turbo_prefetch: false, turbo_method: :post } if policy(Favorite.new(product: @product)).create? %>
 </div>

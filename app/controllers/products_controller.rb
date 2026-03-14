@@ -23,10 +23,10 @@ class ProductsController < ApplicationController
     authorize @product
 
     if @product.save
-        redirect_to products_path
+      redirect_to products_path
     else
-        @categories = Category.all
-        render :new, status: :unprocessable_entity
+      @categories = Category.all
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -41,10 +41,10 @@ class ProductsController < ApplicationController
     authorize @product
 
     if @product.update(product_params)
-        redirect_to products_path
+      redirect_to products_path
     else
-        @categories = Category.all
-        render :edit, status: :unprocessable_entity
+      @categories = Category.all
+      render :edit, status: :unprocessable_entity
     end
   end
 

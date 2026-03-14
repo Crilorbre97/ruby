@@ -58,6 +58,7 @@ en:
       delete: Delete product
       index: Product list
       more_products: More products
+      add_favorites: Add to favorites
   categories:
     index:
       title: Categories list

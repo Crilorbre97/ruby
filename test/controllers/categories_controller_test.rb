@@ -1,3 +1,5 @@
+require "test_helper"
+
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   def setup
     @category = categories(:videojuegos)

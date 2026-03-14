@@ -1,3 +1,5 @@
+require "test_helper"
+
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   def setup
     @product = products(:nintendo)
