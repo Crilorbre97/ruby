@@ -4,6 +4,12 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
   def setup
     login_user
   end
+
+  test "get favorite list" do
+    get favorites_path
+
+    assert_response :success
+  end
   test "mark product as favorite" do
     product = products(:mesa_comedor)
     post favorites_path, params: {
