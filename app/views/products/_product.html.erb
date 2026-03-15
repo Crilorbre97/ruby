@@ -1,0 +1,6 @@
+<li>
+    <%= product.title %>
+
+    <%= link_to t('.show'), product_path(product.id), data: { turbo_prefetch: false } %>
+    <%= link_to t('.edit'), edit_product_path(product.id), data: { turbo_prefetch: false } if Current.user.present? && policy(product).update? %>
+</li>

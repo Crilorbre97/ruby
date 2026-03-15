@@ -45,6 +45,9 @@ en:
       add: Add product
       filter: Filter
       clean: Clean filters
+    product:
+      show: Show
+      edit: Edit
     new:
       title: New product
       index: Product list
@@ -65,10 +68,12 @@ en:
     index:
       title: Categories list
       products: Products
-      delete: Delete
       new: Add category
+    category:
+      delete: Eliminar
     new:
       title: New category
+    form:
       add: Create
   authentication:
     users:

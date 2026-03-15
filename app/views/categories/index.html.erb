@@ -1,14 +1,7 @@
 <h2><%= t(".title") %> </h2>
 
 <ul>
-    <% @categories.each do |category| %>
-    
-        <li>
-            <%= category.label.capitalize %>
-            <%= link_to t(".delete"), category_path(category.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: t("common.confirm") } if Current.user.present? && policy(category).destroy? %>
-        </li>
-    
-    <% end %>
+    <%= render @categories %>
 </ul>
 
 <%= link_to t(".new"), new_category_path, data: { turbo_prefetch: false } if Current.user.present? && policy(Category.new).new? %>

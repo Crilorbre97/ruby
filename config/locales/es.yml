@@ -39,11 +39,12 @@ es:
     index:
       title: Listado productos
       categories: Categorias
-      show: Ver
-      edit: Editar
       add: Añadir producto
       filter: Filtrar
       clean: Borrar filtros
+    product:
+      show: Ver
+      edit: Editar
     new:
       title: Añadir producto
       index: Listado productos
@@ -64,10 +65,12 @@ es:
     index:
       title: Listado categorias
       products: Productos
-      delete: Eliminar
       new: Añadir categoria
+    category:
+      delete: Eliminar
     new:
       title: Nueva categoria
+    form:
       add: Crear
   authentication:
     users:
