@@ -17,10 +17,6 @@
 
 <% end %>
 
-<ul>
-    <%= render @products %>
-</ul>
-
-<%= paginate @products %>
+<%= render 'product_list', products: @products %>
 
 <%= link_to t('.add'), new_product_path, data: { turbo_prefetch: false } if Current.user.present?  %>
