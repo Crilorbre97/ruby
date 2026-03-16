@@ -27,6 +27,8 @@ en:
     pagination:
       next: Next
       last: Last
+      first: First
+      previous: Previous
   shared:
     header:
       login: Login

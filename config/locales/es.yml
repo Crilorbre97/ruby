@@ -26,6 +26,8 @@ es:
     pagination:
       next: Siguiente
       last: Última
+      first: Primera
+      previous: Previa
   shared:
     header:
       login: Inicio sesión
