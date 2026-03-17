@@ -6,19 +6,27 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def new
-    @category = Category.new
-    authorize @category
-  end
+  # def new
+  #   @category = Category.new
+  #   authorize @category
+  # end
 
   def create
     @category = Category.new(category_params)
     authorize @category
 
     if @category.save
-      redirect_to categories_path
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to categories_path }
+      end
     else
-      render :new, status: :unprocessable_entity
+      render turbo_stream:
+        turbo_stream.replace(
+          "new_category",
+          partial: "form",
+          locals: { category: @category }
+        )
     end
   end
 

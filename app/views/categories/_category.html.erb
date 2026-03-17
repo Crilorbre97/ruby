@@ -1,4 +1,6 @@
 <li>
-    <%= category.label.capitalize %>
-    <%= link_to t(".delete"), category_path(category.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: t("common.confirm") } if Current.user.present? && policy(category).destroy? %>
+    <div id="<%= dom_id(category) %>">
+        <%= category.label.capitalize %>
+        <%= link_to t(".delete"), category_path(category.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: t("common.confirm") } if Current.user.present? && policy(category).destroy? %>
+    </div>
 </li>

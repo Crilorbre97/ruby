@@ -1,7 +1,14 @@
 <h2><%= t(".title") %> </h2>
 
-<ul>
-    <%= render @categories %>
-</ul>
 
-<%= link_to t(".new"), new_category_path, data: { turbo_prefetch: false } if Current.user.present? && policy(Category.new).new? %>
+<% if Current.user.present? && policy(Category.new).new? %>
+    <%= turbo_frame_tag "new_category" do %>
+        <%= render "form", category: Category.new %>
+    <% end %>
+<% end %>
+
+<ul>
+    <div id="categories">
+        <%= render @categories %>
+    </div>
+</ul>
