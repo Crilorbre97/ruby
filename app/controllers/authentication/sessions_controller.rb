@@ -1,5 +1,6 @@
 class Authentication::SessionsController < ApplicationController
   skip_before_action :protect_pages, only: [ :new, :create ]
+  before_action :redirect_if_authenticated, except: [ :logout ]
 
   def new
     @session = SessionForm.new

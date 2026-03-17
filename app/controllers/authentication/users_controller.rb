@@ -1,5 +1,6 @@
 class Authentication::UsersController < ApplicationController
   skip_before_action :protect_pages
+  before_action :redirect_if_authenticated
 
   def new
     @user = User.new

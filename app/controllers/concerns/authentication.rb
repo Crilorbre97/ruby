@@ -14,5 +14,9 @@ module Authentication
     def protect_pages
       redirect_to new_session_path unless Current.user
     end
+
+    def redirect_if_authenticated
+      redirect_to products_path if Current.user
+    end
   end
 end

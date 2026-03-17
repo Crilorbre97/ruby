@@ -50,4 +50,12 @@ class Authentication::SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     assert_redirected_to products_path
   end
+
+  test "redirect if user is authenticated" do
+    login_user
+    post sessions_url
+
+    assert_response :redirect
+    assert_redirected_to products_path
+  end
 end
