@@ -26,7 +26,8 @@ class UserAccount < ApplicationRecord
 
   attr_accessor :confirm_password
 
-  validates :username, presence: true, length: { minimum: 5 }, uniqueness: true
+  validates :username, presence: true, length: { minimum: 5 }
+  validates :username, uniqueness: true, if: -> { username.present? }
   validates :password, presence: true, length: { minimum: 8 },
     format: {
       with: /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}/,

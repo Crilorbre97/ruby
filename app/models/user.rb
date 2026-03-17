@@ -25,11 +25,12 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_account
 
   validates :name, presence: true, length: { minimum: 2 }
-  validates :email, presence: true, uniqueness: true,
+  validates :email, presence: true,
     format: {
       with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i,
       message: :invalid
     }
+  validates :email, uniqueness: true, if: -> { email.present? }
   validates :phone, presence: true,
     format: {
       with: /[76]{1}[0-9]{8}/,
