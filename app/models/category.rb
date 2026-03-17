@@ -14,7 +14,7 @@
 class Category < ApplicationRecord
   has_many :products, dependent: :restrict_with_exception
 
-  validates :label, presence: true, uniqueness: true
+  validates :label, presence: true, uniqueness: true, length: { minimum: 3 }
 
   before_save :downcase_attrs
 
