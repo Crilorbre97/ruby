@@ -90,3 +90,5 @@ en:
     index:
       title: Favorites
       show: Show
+      not_favorites: There are not favorites yet
+      products: Products

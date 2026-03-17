@@ -1,5 +1,6 @@
 <h2><%= t('.title') %></h2>
 
+<% if @favorites.present? %>
 <ul>
     <% @favorites.each do |favorite| %>
         <li>
@@ -8,3 +9,7 @@
         </li>
     <% end %>
 </ul>
+<% else %>
+    <p><%= t('.not_favorites') %></p>
+    <%= link_to t('.products'), products_path, data: { turbo_prefetch: false } %>
+<% end %>

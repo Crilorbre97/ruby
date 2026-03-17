@@ -87,3 +87,5 @@ es:
     index:
       title: Favoritos
       show: Ver
+      not_favorites: No hay favoritos todavía
+      products: Productos
