@@ -30,7 +30,7 @@ class UserAccount < ApplicationRecord
   validates :username, uniqueness: true, if: -> { username.present? && username.length >= 5 }
   validates :password, presence: true, length: { minimum: 8 },
     format: {
-      with: /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}/,
+      with: /\A(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}\z/,
       message: :weak_password
     }
   validates :confirm_password, presence: true

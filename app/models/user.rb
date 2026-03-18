@@ -33,7 +33,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, if: -> { email.present? }
   validates :phone, presence: true,
     format: {
-      with: /[76]{1}[0-9]{8}/,
+      with: /\A[76][0-9]{8}\z/,
       message: :invalid_phone
     }
 
