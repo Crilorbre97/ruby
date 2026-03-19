@@ -27,6 +27,5 @@
 </div>
 
 <div>
-    <%= link_to t(".remove_favorite"), favorite_path(@product.id), data: { turbo_prefetch: false, turbo_method: :delete }  if policy(Favorite.new(product: @product)).destroy? %>
-    <%= link_to t(".add_favorites"), favorites_path(product_id: @product.id), data: { turbo_prefetch: false, turbo_method: :post } if policy(Favorite.new(product: @product)).create? %>
+    <%= render 'favorite', product: @product %>
 </div>

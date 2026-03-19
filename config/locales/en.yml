@@ -64,6 +64,7 @@ en:
       delete: Delete product
       index: Product list
       more_products: More products
+    favorite:
       add_favorites: Add to favorites
       remove_favorite: Remove favorite
   categories:
