@@ -10,7 +10,7 @@ class Authentication::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.user_account.role = "user" unless @user.user_account.nil?
-    @user.avatar_url = Unsplash.new.random_phono if @user.valid?
+    @user.avatar_url = Unsplash.new.random_photo if @user.valid?
 
     if @user.save
       redirect_to new_session_path, notice: "Usuario registrado con éxito"

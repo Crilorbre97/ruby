@@ -1,15 +1,10 @@
-require "net/http"
+require "rest-client"
 
 class Unsplash
   def initialize; end
 
-  def random_phono
-    uri = URI("#{url}/photos/random")
-    request = Net::HTTP::Get.new(uri)
-    request["Authorization"] = "Client-ID #{access_key}"
-    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-      http.request(request)
-    end
+  def random_photo
+    response = RestClient::Request.execute(method: :get, url: url, headers: headers)
     json_response = JSON.parse(response.body)
     json_response["urls"]["raw"]
   rescue
@@ -18,11 +13,21 @@ class Unsplash
 
   private
 
-  def url
-    ENV["UNSPLASH_URL"]
+  def headers
+    {
+      authorization: "Client-ID #{access_key}"
+    }
   end
 
   def access_key
     ENV["UNSPLASH_ACCESS_KEY"]
+  end
+
+  def root_url
+    ENV["UNSPLASH_URL"]
+  end
+
+  def url
+    "#{root_url}/photos/random"
   end
 end
