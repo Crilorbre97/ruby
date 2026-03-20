@@ -1,8 +1,14 @@
 <%= turbo_frame_tag "products" do %>
 
-    <ul>
+    <table>  
+        <tr>
+            <th><%= Product.human_attribute_name(:title) %></th>
+            <th><%= Product.human_attribute_name(:price) %></th>
+            <th><%= Product.human_attribute_name(:created_at) %></th>
+            <th></th>
+        </tr>
         <%= render products %>
-    </ul>
+    </table>
 
     <%= paginate products %>
 <% end %>

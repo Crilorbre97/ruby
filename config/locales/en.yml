@@ -2,6 +2,14 @@ en:
   common:
     confirm: ¿Are you sure?
   activerecord:
+    models:
+    attributes:
+      product:
+        title: Title
+        description: Description
+        price: Price
+        created_at: Created at
+        updated_at: Updated at
     errors:
       model:
         user_account:
