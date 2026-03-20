@@ -33,6 +33,9 @@ gem "kaminari", "~> 1.2", ">= 1.2.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.3"
 
+# Rest client
+gem "rest-client", "~> 2.1"
+
 # Simple form
 gem "simple_form", "~> 5.4", ">= 5.4.1"
 
