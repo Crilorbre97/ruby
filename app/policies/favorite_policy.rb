@@ -1,6 +1,6 @@
 class FavoritePolicy < ApplicationPolicy
   def index?
-    true
+    user.present?
   end
 
   def create?

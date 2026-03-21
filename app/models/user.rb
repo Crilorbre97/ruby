@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_one :user_account, dependent: :destroy
   has_many :products, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :purchases, dependent: :destroy
 
   accepts_nested_attributes_for :user_account
 

@@ -23,6 +23,7 @@
 
 
 <div>
+    <%= link_to t(".buy"), purchases_path(purchase: { product_id: @product.id }), data: { turbo_prefetch: false, turbo_method: :post, turbo_confirm: t("common.confirm") } if Current.user.present? && policy(Purchase.new(product_id: @product.id)).create? %>
     <%= link_to t('.delete'), product_path(@product.id), data: { turbo_prefetch: false, turbo_method: :delete, turbo_confirm: t("common.confirm") } if Current.user.present? && policy(@product).destroy? %>
 </div>
 

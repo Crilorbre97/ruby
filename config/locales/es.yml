@@ -10,6 +10,14 @@ es:
         price: Precio
         created_at: Fecha creación
         updated_at: Fecha actualización
+      category:
+        label: Categoría
+        created_at: Fecha creación
+        updated_at: Fecha actualización
+      purchase:
+        price: Precio
+        created_at: Fecha creación
+        updated_at: Fecha actualización
     errors:
       models:
         user_account:
@@ -45,6 +53,7 @@ es:
       logout: Cerrar sesión
       welcome: Bienvenido
       favorites: Favoritos
+      purchases: Compras
   products:
     index:
       title: Listado productos
@@ -69,6 +78,7 @@ es:
       delete: Borrar producto
       index: Listado productos
       more_products: Más productos
+      buy: Comprar
     favorite:
       add_favorites: Añadir a favoritos
       remove_favorite: Borrar favorito
@@ -98,3 +108,11 @@ es:
       show: Ver
       not_favorites: No hay favoritos todavía
       products: Productos
+  purchases:
+    index:
+      title: Compras
+    purchase:
+      show_details: Ver detalles
+    show:
+      title: Detalles compra
+      purchases: Compras

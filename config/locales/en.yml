@@ -10,6 +10,14 @@ en:
         price: Price
         created_at: Created at
         updated_at: Updated at
+      category:
+        label: Categoría
+        created_at: Created at
+        updated_at: Updated at
+      purchase:
+        price: Precio
+        created_at: Created at
+        updated_at: Updated at
     errors:
       model:
         user_account:
@@ -46,6 +54,7 @@ en:
       logout: Logout
       welcome: Welcome
       favorites: Favorites
+      purchases: Purchases
   products:
     index:
       title: Product list
@@ -72,6 +81,7 @@ en:
       delete: Delete product
       index: Product list
       more_products: More products
+      buy: Buy
     favorite:
       add_favorites: Add to favorites
       remove_favorite: Remove favorite
@@ -101,3 +111,11 @@ en:
       show: Show
       not_favorites: There are not favorites yet
       products: Products
+  purchases:
+    index:
+      title: Purchases
+    purchase:
+      show_details: Show details
+    show:
+      title: Purchase details
+      purchases: Purchases

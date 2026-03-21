@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   resources :products
   resources :categories, except: [ :show, :new, :edit, :update ]
   resources :favorites, only: [ :create, :destroy, :index ]
+  resources :purchases, only: [ :index, :create, :show ]
 end

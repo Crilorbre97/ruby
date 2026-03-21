@@ -1,0 +1,27 @@
+<h2><%= t('.title') %></h2>
+
+<div>
+    <strong><%= Purchase.human_attribute_name(:price) %>:</strong> <%= @purchase.price %>€
+</div>
+
+<div>
+    <strong><%= Purchase.human_attribute_name(:created_at) %>:</strong> <%= @purchase.created_at&.strftime("%d-%m-%Y %H:%M") %>
+</div>
+
+<div>
+    <strong><%= Product.human_attribute_name(:price) %>:</strong> <%= @purchase.product.price %>€
+</div>
+
+<div>
+    <strong><%= Product.human_attribute_name(:title) %>:</strong> <%= @purchase.product.title %>
+</div>
+
+<div>
+    <strong><%= Product.human_attribute_name(:description) %>:</strong> <%= @purchase.product.description %>
+</div>
+
+<div>
+    <strong><%= Category.human_attribute_name(:label) %>:</strong> <%= @purchase.product.category.label %>
+</div>
+
+<%= link_to t(".purchases"), purchases_path %>
