@@ -88,4 +88,5 @@ group :test do
   gem "selenium-webdriver"
   gem "simplecov"
   gem "webmock", "~> 3.26", ">= 3.26.1"
+  gem "minitest", "~> 5.20"
 end

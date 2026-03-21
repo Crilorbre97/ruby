@@ -49,7 +49,7 @@ class Authentication::UsersControllerTest < ActionDispatch::IntegrationTest
   private
 
   def stub_unsplash_random_photo(status_code, body = nil)
-    stub_request(:get, "https://fake.unsplash.test:80/photos/random").
+    stub_request(:get, "http://fake.unsplash.test:80/photos/random").
       with(
         headers: {
           "Accept" => "*/*",
